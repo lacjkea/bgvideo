@@ -1,0 +1,61 @@
+:root {
+  --headerOpacity: 1;
+  --headerScale: 1;
+}
+body,
+html {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+#videocontainer {
+  display: grid;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+}
+#videocontainer > * {
+  grid-area: 1/1;
+  color: white;
+}
+#videocontainer video {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+#videocontainer h1 {
+  text-align: center;
+  font-size: calc(15rem * var(--headerScale));
+  /*opacity: var(--headerOpacity);*/
+  /*transform: translateY(calc(200% - 200% * var(--headerScale)));*/
+  transform: translateY(calc(10vh * (var(--headerScale))));
+}
+#videocontainer h1 span {
+  display: block;
+  font-size: calc(10rem * var(--headerScale));
+}
+#maincontainer {
+  display: block;
+  position: relative;
+  z-index: 0;
+  padding: 1rem;
+  margin-top: 90vh;
+  background: rgba(255, 255, 255, 1);
+}
+#maincontainer img {
+  shape-outside: url(./2.png);
+  float: left;
+  shape-margin: 1rem;
+}
+#maincontainer img[alt="The Me Mover 2"] {
+  float: right;
+}
+p {
+  max-width: 70ch;
+}
